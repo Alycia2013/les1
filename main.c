@@ -18,8 +18,7 @@ int main()
     scanf(" %c", &bewerking);
 
     int uitkomst;
-    switch (bewerking)
-    {
+    switch (bewerking) {
     case '*':
         uitkomst = cijfer_1 * cijfer_2;
         break;
@@ -36,6 +35,8 @@ int main()
         printf("sorry ik begrijp je niet\n");
         return 1;
     }
+    printf("goed gedaan\n");
     printf("de uitomst is: %d\n", uitkomst);
-    return 0;
-}
+    return 0;  
+} 
+

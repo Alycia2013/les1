@@ -1,26 +1,29 @@
 #include <stdio.h>
 
-int vraag_cijfer()
+double vraag_cijfer()
 {
-    int cijfer;
+    double cijfer;
     printf("geef een cijfer: ");
-    scanf(" %d", &cijfer);
+    scanf(" %lf", &cijfer);
     return cijfer;
 }
 
 int main()
 {
-    int cijfer_1, cijfer_2;
+    double cijfer_1, cijfer_2;
     char bewerking;
-    char nog_eens='j';
-    while (nog_eens == 'j' || nog_eens == 'J') {
+    char nog_eens = 'j';
+    char weet_je_het_zeker = 'n';
+    while (nog_eens == 'j' || weet_je_het_zeker == 'n')
+    {
         cijfer_1 = vraag_cijfer();
         cijfer_2 = vraag_cijfer();
         printf("welke bewerking wil je?: ");
         scanf(" %c", &bewerking);
 
-        int uitkomst;
-        switch (bewerking) {
+        double uitkomst;
+        switch (bewerking)
+        {
         case '*':
             uitkomst = cijfer_1 * cijfer_2;
             break;
@@ -37,10 +40,13 @@ int main()
             printf("sorry ik begrijp je niet\n");
             return 1;
         }
-        printf("de uitomst is: %d\n", uitkomst);
+        printf("de uitomst is: %lf\n", uitkomst);
         printf("wil nog eens? [j/n]: ");
         scanf(" %c", &nog_eens);
+        if (nog_eens == 'n') {
+            printf("weet je het zeker? [j/n]");
+            scanf(" %c", &weet_je_het_zeker);
+        }
     }
-    return 0;  
-} 
-
+    return 0;
+}
